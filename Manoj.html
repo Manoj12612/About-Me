@@ -35,7 +35,7 @@
         nav ul li a:hover {
             color: #00adb5;
         }
-        .main-content {
+        .main-content, .about-section {
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -51,12 +51,59 @@
             color: #00adb5;
             animation: slideIn 1.5s ease-in-out;
         }
-        .right img {
+        .right img, .left img {
             width: 250px;
             height: 250px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #00adb5;
+        }
+        .about-content {
+            max-width: 600px;
+            text-align: left;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .about-content h2 {
+            font-size: 2rem;
+            color: #00adb5;
+        }
+        .about-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .services-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .services-section h2 {
+            font-size: 2.5rem;
+            color: #00adb5;
+        }
+        .services-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .service-card {
+            background: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card h3 {
+            color: #00adb5;
+            font-size: 1.5rem;
+        }
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.4;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -67,12 +114,15 @@
             to { transform: translateY(0); }
         }
         @media (max-width: 768px) {
-            .main-content {
+            .main-content, .about-section {
                 flex-direction: column;
                 text-align: center;
             }
-            .right img {
+            .right img, .left img {
                 margin-top: 20px;
+            }
+            .about-content {
+                text-align: center;
             }
         }
     </style>
@@ -94,7 +144,38 @@
             <h2>Software Developer</h2>
         </div>
         <div class="right">
-            <img src="../About-Me/Images/sharedimage.jpg" alt="Madde Manoj">
+            <img src="https://raw.githubusercontent.com/Manoj12612/About-Me/refs/heads/main/Images/sharedimage.jpg" alt="Madde Manoj">
+        </div>
+    </section>
+    <section id="about" class="about-section">
+        <div class="left">
+            <img src="https://raw.githubusercontent.com/Manoj12612/About-Me/refs/heads/main/Images/sharedimage.jpg" alt="Madde Manoj">
+        </div>
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>
+                I am a passionate Software Developer with experience in designing and developing scalable web applications. 
+                I specialize in front-end and back-end technologies, creating seamless user experiences. 
+                My expertise includes Vue.js, ASP.NET Core, Python (Flask), and database management. 
+                I love solving complex problems and constantly improving my skills.
+            </p>
+        </div>
+    </section>
+    <section id="services" class="services-section">
+        <h2>My Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <h3>UX/UI Design</h3>
+                <p>Creating user-friendly and visually appealing interfaces to enhance user experience.</p>
+            </div>
+            <div class="service-card">
+                <h3>Web Applications</h3>
+                <p>Developing scalable and responsive web applications tailored to business needs.</p>
+            </div>
+            <div class="service-card">
+                <h3>App Icons</h3>
+                <p>Designing custom app icons that align with brand identity and user engagement.</p>
+            </div>
         </div>
     </section>
 </body>
