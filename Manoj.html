@@ -6,6 +6,8 @@
     <title>Madde Manoj | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="script.js" defer></script>
     <style>
         body {
@@ -40,16 +42,92 @@
             justify-content: space-around;
             align-items: center;
             height: 90vh;
-            text-align: center;
+            text-align: left;
+            padding: 20px; /* Add some padding for better spacing */
         }
+        
+        .left {
+            max-width: 400px; /* Limit the width of the left section */
+        }
+        
         .left h1 {
-            font-size: 3rem;
+            font-size: 2.5rem; /* Adjust font size */
             animation: fadeIn 1.5s ease-in;
         }
+        
         .left h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem; /* Adjust font size */
             color: #00adb5;
             animation: slideIn 1.5s ease-in-out;
+        }
+        
+        .left p {
+            font-size: 1.2rem; /* Adjust font size */
+            margin: 10px 0; /* Add margin for spacing */
+        }
+        .falling-text {
+            animation: fall 1s ease forwards;
+            opacity: 100; /* Start with hidden text */
+        }
+        
+        .falling-text:nth-child(1) {
+            animation-delay: 0.2s; /* Delay for the first line */
+        }
+        
+        .falling-text:nth-child(2) {
+            animation-delay: 0.4s; /* Delay for the second line */
+        }
+        
+        .falling-text:nth-child(3) {
+            animation-delay: 0.6s; /* Delay for the third line */
+        }
+        
+        .software-developer {
+            color: #00adb5; /* Change color for the Software Developer text */
+            font-weight: bold; 
+            margin-bottom: 45px;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #333;
+            padding: 5px;
+            transition: transform 0.3s, box-shadow 0.3s; /* Add transition for box-shadow */
+            box-shadow: 0 0 20px #00adb5; 
+        }
+        
+        .icon img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        
+        .icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #00adb5; /* Glowing effect on hover */
+        }
+       
+        .right {
+            display: flex;
+            justify-content: center; /* Center the image */
+        }
+        
+        .right img {
+            width: 200px; /* Reduce image size */
+            height: 200px; /* Reduce image size */
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00adb5;
         }
         .right img, .left img {
             width: 250px;
@@ -93,7 +171,9 @@
             width: 300px;
             text-align: center;
             transition: transform 0.3s ease-in-out;
+            position: relative; /* Position for icon animation */
         }
+        
         .service-card:hover {
             transform: translateY(-10px);
         }
@@ -104,6 +184,108 @@
         .service-card p {
             font-size: 1rem;
             line-height: 1.4;
+        }
+        .service-icon {
+            font-size: 40px; /* Set icon size */
+            color: #00adb5; /* Icon color */
+            margin-bottom: 15px; /* Space between icon and text */
+            animation: bounce 1s infinite; /* Add bounce animation */
+        }
+        .skills-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        .skills-section h2 {
+            font-size: 2.5rem;
+            color: #00adb5;
+            margin-bottom: 30px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .skill {
+            width: 100%;
+            max-width: 600px;
+            background: #1f1f1f;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .skill-name {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        
+        .skill-percentage {
+            font-size: 1.2rem;
+            color: #00adb5;
+        }
+        
+        .skill-bar {
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 20px; /* Set height for the progress bar */
+        }
+        
+        .skill-level {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        
+        .html {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+        }
+        
+        .css {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+        }
+        
+        .js {
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+        }
+        
+        .react {
+            background: linear-gradient(90deg, #61dafb, #21a1f1);
+        }
+        
+      
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -124,6 +306,9 @@
             .about-content {
                 text-align: center;
             }
+            .skills-container {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -139,9 +324,24 @@
         </nav>
     </header>
     <section class="main-content">
-        <div class="left">
-            <h1>Madde Manoj</h1>
-            <h2>Software Developer</h2>
+        <div class="left-c">
+            <h1 class="falling-text">Hello, it's me</h1>
+            <h2 class="falling-text">MADDE MANOJ</h2>
+            <p class="falling-text software-developer"><span style="color:white">I'm a </span>Software Developer</p>
+            <div class="social-icons">
+                <a href="https://wa.me/your-number" target="_blank" class="icon whatsapp">
+                    <img src="https://img.icons8.com/ios-filled/50/00adb5/whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="icon linkedin">
+                    <img src="https://img.icons8.com/ios-filled/50/00adb5/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="mailto:your-email@example.com" class="icon email">
+                    <img src="https://img.icons8.com/ios-filled/50/00adb5/mail.png" alt="Email">
+                </a>
+                <a href="https://github.com/your-github" target="_blank" class="icon github">
+                    <img src="https://img.icons8.com/ios-filled/50/00adb5/github.png" alt="GitHub">
+                </a>
+            </div>
         </div>
         <div class="right">
             <img src="https://raw.githubusercontent.com/Manoj12612/About-Me/refs/heads/main/Images/sharedimage.jpg" alt="Madde Manoj">
@@ -155,8 +355,8 @@
             <h2>About Me</h2>
             <p>
                 I am a passionate Software Developer with experience in designing and developing scalable web applications. 
-                I specialize in front-end and back-end technologies, creating seamless user experiences. 
-                My expertise includes Vue.js, ASP.NET Core, Python (Flask), and database management. 
+                I specialize in both front-end and back-end technologies, creating seamless user experiences. 
+                My expertise includes HTML, CSS, JavaScript, Vue.js, MVC, and .NET Core. 
                 I love solving complex problems and constantly improving my skills.
             </p>
         </div>
@@ -165,16 +365,60 @@
         <h2>My Services</h2>
         <div class="services-container">
             <div class="service-card">
+                <i class="fas fa-paint-brush service-icon"></i>
                 <h3>UX/UI Design</h3>
                 <p>Creating user-friendly and visually appealing interfaces to enhance user experience.</p>
             </div>
             <div class="service-card">
+                <i class="fas fa-laptop-code service-icon"></i>
                 <h3>Web Applications</h3>
                 <p>Developing scalable and responsive web applications tailored to business needs.</p>
             </div>
             <div class="service-card">
+                <i class="fas fa-icons service-icon"></i>
                 <h3>App Icons</h3>
                 <p>Designing custom app icons that align with brand identity and user engagement.</p>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="skills-section">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <div class="skill-info">
+                    <span class="skill-name">HTML</span>
+                    <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level html" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-info">
+                    <span class="skill-name">CSS</span>
+                    <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level css" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-info">
+                    <span class="skill-name">JavaScript</span>
+                    <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level js" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-info">
+                    <span class="skill-name">React</span>
+                    <span class="skill-percentage">75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level react" style="width: 75%;"></div>
+                </div>
             </div>
         </div>
     </section>
