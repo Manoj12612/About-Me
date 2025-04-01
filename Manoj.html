@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="script.js" defer></script>
     <style>
         body {
@@ -19,14 +20,14 @@
         }
         header {
             display: flex;
-            justify-content: center;
+            justify-content: right;
             padding: 15px;
             background: #1f1f1f;
         }
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 30px;
         }
         nav ul li a {
             color: #fff;
@@ -101,7 +102,7 @@
             height: 40px;
             border-radius: 50%;
             background: #333;
-            padding: 5px;
+            padding: 0px;
             transition: transform 0.3s, box-shadow 0.3s; /* Add transition for box-shadow */
             box-shadow: 0 0 20px #00adb5; 
         }
@@ -180,6 +181,7 @@
         .service-card h3 {
             color: #00adb5;
             font-size: 1.5rem;
+            box-shadow: 0 0 20px #00adb5;
         }
         .service-card p {
             font-size: 1rem;
@@ -259,10 +261,173 @@
             background: linear-gradient(90deg, #00c6ff, #0072ff);
         }
         
-        .react {
-            background: linear-gradient(90deg, #61dafb, #21a1f1);
+        .Vuejs {
+            background: linear-gradient(90deg, #9bc4cf, #0b4e79);
+        }
+        .ASPNETMVC{
+            background: linear-gradient(90deg, #3b4a4f, #bac5cb);
+        }
+        .SQLDatabase{
+            background: linear-gradient(90deg, #272d2f, #77cbff);
+        }
+        .experience-section {
+            padding: 50px 20px;
+            background: #121212;
+            text-align: center;
         }
         
+        .experience-section h2 {
+            font-size: 2.5rem;
+            color: #00adb5;
+            margin-bottom: 30px;
+        }
+        
+        .experience-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .experience-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px; /* Set a max width for the cards */
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+        
+        .experience-card h3 {
+            color: #00adb5;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .role, .technologies {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .summary {
+            margin-top: 10px;
+            line-height: 1.5;
+            color:black;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+            color:black;
+        }
+        
+        ul li {
+            margin: 5px 0;
+            text-align: left; /* Align text to the left for list items */
+        }
+        .contact-section {
+            padding: 50px 20px;
+            background: #121212;
+        }
+        
+        .contact-section h2 {
+            font-size: 2.5rem;
+            color: #00adb5;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            text-align: left;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        
+        .contact-details {
+            margin: 15px 0;
+        }
+        
+        .contact-details p {
+            font-weight: bold;
+            color: #00adb5;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: left;
+        }
+        
+        .icon img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .contact-form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form h3 {
+            margin-bottom: 20px;
+            color: #00adb5;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333; /* Ensure labels are visible */
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem; /* Increase font size for better readability */
+        }
+        
+        .submit-button {
+            background: #00adb5;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1rem; /* Increase font size for better readability */
+        }
+        
+        .submit-button:hover {
+            background: #009a9a;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
       
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
@@ -320,6 +485,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact Me</a></li>
             </ul>
         </nav>
     </header>
@@ -386,20 +552,20 @@
         <div class="skills-container">
             <div class="skill">
                 <div class="skill-info">
-                    <span class="skill-name">HTML</span>
+                    <span class="skill-name">Vue.js</span>
                     <span class="skill-percentage">90%</span>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-level html" style="width: 90%;"></div>
+                    <div class="skill-level Vuejs" style="width: 90%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <div class="skill-info">
-                    <span class="skill-name">CSS</span>
-                    <span class="skill-percentage">85%</span>
+                    <span class="skill-name">ASP.NET MVC</span>
+                    <span class="skill-percentage">70%</span>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-level css" style="width: 85%;"></div>
+                    <div class="skill-level ASPNETMVC" style="width: 70%;"></div>
                 </div>
             </div>
             <div class="skill">
@@ -410,14 +576,106 @@
                 <div class="skill-bar">
                     <div class="skill-level js" style="width: 80%;"></div>
                 </div>
+            </div> 
+            <div class="skill">
+                <div class="skill-info">
+                    <span class="skill-name">HTML</span>
+                    <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level html" style="width: 90%;"></div>
+                </div>
             </div>
             <div class="skill">
                 <div class="skill-info">
-                    <span class="skill-name">React</span>
-                    <span class="skill-percentage">75%</span>
+                    <span class="skill-name">CSS</span>
+                    <span class="skill-percentage">90%</span>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-level react" style="width: 75%;"></div>
+                    <div class="skill-level css" style="width: 85%;"></div>
+                </div>
+            </div>
+                     
+            <div class="skill">
+                <div class="skill-info">
+                    <span class="skill-name">SQL Database </span>
+                    <span class="skill-percentage">50%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level SQLDatabase" style="width: 50%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="experience" class="experience-section">
+        <h2>My Experience</h2>
+        <div class="experience-container">
+            <div class="experience-card">
+                <h3>Irely Soft Service Pvt Ltd</h3>
+                <p class="role">Role: Junior Software Developer</p>
+                <p class="technologies">Technologies: HTML, CSS, JavaScript, Sencha.js MVC</p>
+                <p class="summary">Developed a website for an e-commerce platform during my internship, focusing on creating a user-friendly interface and integrating backend APIs.</p>
+            </div>
+            <div class="experience-card">
+                <h3>Knowledgeflex Technologies Pvt Ltd</h3>
+                <p class="role">Role: Junior Software Developer</p>
+                <p class="technologies">Technologies: HTML, CSS, Vue.js, Python, JavaScript, ASP MVC</p>
+                <p class="summary">Worked on various software products, including:</p>
+                <ul>
+                    <li><strong>VGT:</strong> Developed a virtual patrolling product with AI capabilities, focusing on front-end and backend integration.</li>
+                    <li><strong>Smart Guard:</strong> Created a smart visitor management system that operates autonomously.</li>
+                    <li><strong>Iops:</strong> Developed a patrolling project for metro systems, enhancing security with front-end and database binding.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 contact-info">
+                    <h2>Let’s Work Together</h2>
+                    <p>I'm excited to collaborate on your next project. Whether you have a question or need assistance, feel free to reach out!</p>
+                    <p>Contact me via email or phone:</p>
+                    <div class="contact-details">
+                        <p><i class="fas fa-arrow-right"></i> manojreddy0002@gmail.com</p>
+                        <p><i class="fas fa-arrow-right"></i> 7995677645</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://wa.me/your-number" target="_blank" class="icon whatsapp">
+                            <img src="https://img.icons8.com/ios-filled/50/00adb5/whatsapp.png" alt="WhatsApp">
+                        </a>
+                        <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="icon linkedin">
+                            <img src="https://img.icons8.com/ios-filled/50/00adb5/linkedin.png" alt="LinkedIn">
+                        </a>
+                        <a href="mailto:your-email@example.com" class="icon email">
+                            <img src="https://img.icons8.com/ios-filled/50/00adb5/mail.png" alt="Email">
+                        </a>
+                        <a href="https://github.com/your-github" target="_blank" class="icon github">
+                            <img src="https://img.icons8.com/ios-filled/50/00adb5/github.png" alt="GitHub">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form class="contact-form">
+                        <h3>Contact Me</h3>
+                        <div class="form-group">
+                            <label for="name">Enter Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Enter Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Enter Your Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Enter Your Message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
