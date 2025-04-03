@@ -22,7 +22,7 @@
             display: flex;
             justify-content: right;
             padding: 15px;
-            background: #1f1f1f;
+            background: #121212;
         }
         nav ul {
             list-style: none;
@@ -38,7 +38,11 @@
         nav ul li a:hover {
             color: #00adb5;
         }
-        .main-content, .about-section {
+        .main-content {
+            background-image: url('../About-Me/Images/firstpagebg.png'); /* Replace with your actual image URL */
+            background-size: cover; /* Ensures the image covers the entire section */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents image repetition */
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -46,7 +50,18 @@
             text-align: left;
             padding: 20px; /* Add some padding for better spacing */
         }
-        
+        .about-section{
+            background-image: url('../About-Me/Images/secongpagebg.png'); /* Replace with your actual image URL */
+            background-size: cover; /* Ensures the image covers the entire section */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents image repetition */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 90vh;
+            text-align: left;
+            padding: 20px; /* Add some padding for better spacing */
+        }
         .left {
             max-width: 400px; /* Limit the width of the left section */
         }
@@ -124,13 +139,13 @@
         }
         
         .right img {
-            width: 200px; /* Reduce image size */
-            height: 200px; /* Reduce image size */
+            width: 315px;
+            height: 315px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #00adb5;
+            margin-left: 8px;
         }
-        .right img, .left img {
+        .left img {
             width: 250px;
             height: 250px;
             border-radius: 50%;
@@ -491,8 +506,8 @@
     </header>
     <section class="main-content">
         <div class="left-c">
-            <h1 class="falling-text">Hello, it's me</h1>
-            <h2 class="falling-text">MADDE MANOJ</h2>
+            <h1 class="falling-text">Hi, I'm <span>Madde Manoj</span></h1>
+            <!--<h2 class="falling-text">MADDE MANOJ</h2>-->
             <p class="falling-text software-developer"><span style="color:white">I'm a </span>Software Developer</p>
             <div class="social-icons">
                 <a href="https://wa.me/your-number" target="_blank" class="icon whatsapp">
@@ -514,8 +529,7 @@
         </div>
     </section>
     <section id="about" class="about-section">
-        <div class="left">
-            <img src="https://raw.githubusercontent.com/Manoj12612/About-Me/refs/heads/main/Images/sharedimage.jpg" alt="Madde Manoj">
+        <div class="left" style="min-width: 400px;">
         </div>
         <div class="about-content">
             <h2>About Me</h2>
